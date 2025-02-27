@@ -8,6 +8,7 @@ const Register = () => {
     email: "",
     phone: "",
     username: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -16,7 +17,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await axios.post("http://localhost:5000/signup", {
         first_name: formData.firstName,
@@ -24,17 +25,16 @@ const Register = () => {
         email: formData.email,
         phone: formData.phone,
         username: formData.username,
+        password: formData.password,
       });
-  
+
       alert(response.data.message);
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", username: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", username: "", password: "" });
     } catch (error) {
       console.error("Signup error:", error);
       alert("Error signing up. Please try again.");
     }
   };
-  
-  
 
   return (
     <div className="h-screen bg-cover bg-center flex flex-col justify-center items-center" style={{ backgroundImage: "url('/img2.jpg')" }}>
@@ -51,6 +51,7 @@ const Register = () => {
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} className="p-2 border rounded w-full" required />
             <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} className="p-2 border rounded w-full" required />
             <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} className="p-2 border rounded w-full" required />
+            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} className="p-2 border rounded w-full" required />
             <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white p-3 rounded transition-transform transform hover:scale-105">Sign Up</button>
           </form>
           <p className="mt-4 text-sm">

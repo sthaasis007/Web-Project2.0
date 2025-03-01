@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/shopnow" element={<Shopnow />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
         {/* Redirect invalid routes to Home */}

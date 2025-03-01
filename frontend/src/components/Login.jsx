@@ -24,7 +24,7 @@ const Login = () => {
     try {
       const response = await axios.post("http://localhost:5000/login", formData);
       localStorage.setItem("token", response.data.token); // Store token
-      navigate("/dashboard"); // Redirect on success
+      navigate("/Home"); // Redirect on success
     } catch (error) {
       console.error("Login error:", error);
       setError(error.response?.data?.error || "Invalid username or password.");

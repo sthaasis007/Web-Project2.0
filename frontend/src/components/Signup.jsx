@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Add this line
 
 const Register = () => {
+  const navigate = useNavigate(); // Add this line
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -30,6 +32,7 @@ const Register = () => {
 
       alert(response.data.message);
       setFormData({ firstName: "", lastName: "", email: "", phone: "", username: "", password: "" });
+      navigate("/login"); // Ensure navigate is called correctly
     } catch (error) {
       console.error("Signup error:", error);
       alert("Error signing up. Please try again.");

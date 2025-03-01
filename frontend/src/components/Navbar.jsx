@@ -29,7 +29,7 @@ function Navbar() {
             <span>ShopNow</span>
           </Link>
         </li>
-        <li className="mx-[25px] cursor-pointer flex items-center justify-center">
+        {/* <li className="mx-[25px] cursor-pointer flex items-center justify-center">
           <Link to="/login" className="flex items-center space-x-2 hover:text-gray-300">
             <i className="fas fa-sign-in-alt"></i>
             <span>Login</span>
@@ -40,7 +40,7 @@ function Navbar() {
             <i className="fas fa-user-plus"></i>
             <span>Signup</span>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
